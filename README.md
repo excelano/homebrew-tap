@@ -7,13 +7,8 @@ macOS and Linux.
 
 ```sh
 brew tap excelano/tap
+brew trust excelano/tap   # one-time: Homebrew gates third-party taps behind explicit trust
 brew install xql
-```
-
-Or in a single command:
-
-```sh
-brew install excelano/tap/xql
 ```
 
 Upgrade alongside everything else with `brew upgrade`.
