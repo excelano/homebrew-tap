@@ -5,21 +5,21 @@
 class Nved < Formula
   desc "Terminal text editor that edits in your scrollback like a REPL"
   homepage "https://excelano.com/nved/"
-  version "1.2.0"
+  version "1.2.1"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/excelano/nved/releases/download/v1.2.0/nved_1.2.0_darwin_amd64.tar.gz"
-      sha256 "26203f41b08a6d2f6fa3f5f5c53f6d258aaf3fa8b7c6145342711b09c541acd7"
+      url "https://github.com/excelano/nved/releases/download/v1.2.1/nved_1.2.1_darwin_amd64.tar.gz"
+      sha256 "f6ae0a9e4480ae26618b4874419d059f8d16ce644301aa07f1353f2cf182eaf1"
 
       define_method(:install) do
         bin.install "nved"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/excelano/nved/releases/download/v1.2.0/nved_1.2.0_darwin_arm64.tar.gz"
-      sha256 "c32eb35ed7798914644a1f2fce107c36296a7d5c613549e1e01977b8d43bf86b"
+      url "https://github.com/excelano/nved/releases/download/v1.2.1/nved_1.2.1_darwin_arm64.tar.gz"
+      sha256 "d633278db67f22dd679f6db5b10cd93f0c76c61741a0bc496bd724d980c2f624"
 
       define_method(:install) do
         bin.install "nved"
@@ -29,15 +29,15 @@ class Nved < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/excelano/nved/releases/download/v1.2.0/nved_1.2.0_linux_amd64.tar.gz"
-      sha256 "6d1a4c0ef412f397633979ce10a4703c9950c48f593029bb56ae028a21e12582"
+      url "https://github.com/excelano/nved/releases/download/v1.2.1/nved_1.2.1_linux_amd64.tar.gz"
+      sha256 "08e084d40e4b277acc35bfbb58999d6d28f45c3e6722ee0b69da759811c47a5b"
       define_method(:install) do
         bin.install "nved"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/excelano/nved/releases/download/v1.2.0/nved_1.2.0_linux_arm64.tar.gz"
-      sha256 "d65c52531bb819b22e3895246a0fa740f89b3b0f40d19cb10f71372cb1db8158"
+      url "https://github.com/excelano/nved/releases/download/v1.2.1/nved_1.2.1_linux_arm64.tar.gz"
+      sha256 "b5778a83bf180127a605131484e1fabda80d65d7fe3a14fc2178c68141f84966"
       define_method(:install) do
         bin.install "nved"
       end
