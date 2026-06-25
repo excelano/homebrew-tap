@@ -1,36 +1,66 @@
 class Ved < Formula
-  desc "Verbose ed clone with friendly errors, in pure-stdlib Rust"
+  desc "The verbose ed — a drop-in compatible ed clone with friendly errors and a built-in help system"
   homepage "https://excelano.com/ved/"
-  version "0.1.5"
-  license "MIT"
-
-  on_macos do
-    on_arm do
-      url "https://github.com/excelano/ved/releases/download/v0.1.5/ved-aarch64-apple-darwin.tar.xz"
-      sha256 "83333c0f3956f7779913be59918010188bcb869d5dc2e5e721a3c0a917ce2630"
+  version "0.2.0"
+  if OS.mac?
+    if Hardware::CPU.arm?
+      url "https://github.com/excelano/ved/releases/download/v0.2.0/ved-aarch64-apple-darwin.tar.xz"
+      sha256 "2e45f554fa544e411780b03f8cb598d49e1a7d88df0d6c1e725f60b95bd83e6a"
     end
-    on_intel do
-      url "https://github.com/excelano/ved/releases/download/v0.1.5/ved-x86_64-apple-darwin.tar.xz"
-      sha256 "8ce86bd2ec51b8fc90186dd70b77e75f1259923eaac1552cb2b7e3520a57aef4"
+    if Hardware::CPU.intel?
+      url "https://github.com/excelano/ved/releases/download/v0.2.0/ved-x86_64-apple-darwin.tar.xz"
+      sha256 "9286dac7105498a7b7f2a4aa9a271a8c6b1ad531d933e1c46a4b0ef69047e295"
     end
   end
-
-  on_linux do
-    on_arm do
-      url "https://github.com/excelano/ved/releases/download/v0.1.5/ved-aarch64-unknown-linux-gnu.tar.xz"
-      sha256 "026f0899e9bc8484ee240e5a370d59a2b500dea17d014e71c2436d0e6b910c88"
+  if OS.linux?
+    if Hardware::CPU.arm?
+      url "https://github.com/excelano/ved/releases/download/v0.2.0/ved-aarch64-unknown-linux-gnu.tar.xz"
+      sha256 "43882f798aedde04a143eecadda8afa93754b28798c9e93e8e2681e2a56f6b32"
     end
-    on_intel do
-      url "https://github.com/excelano/ved/releases/download/v0.1.5/ved-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "0356124ae85a7ae8a0ee38be111b22b99aa78180da5cedeecb837348e4d60ab1"
+    if Hardware::CPU.intel?
+      url "https://github.com/excelano/ved/releases/download/v0.2.0/ved-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "2d7dc6805c66498d0338a9bebed4d5e4e5c565006554463a17101a1961891dd7"
+    end
+  end
+  license "MIT"
+
+  BINARY_ALIASES = {
+    "aarch64-apple-darwin":      {},
+    "aarch64-unknown-linux-gnu": {},
+    "x86_64-apple-darwin":       {},
+    "x86_64-pc-windows-gnu":     {},
+    "x86_64-unknown-linux-gnu":  {},
+  }.freeze
+
+  def target_triple
+    cpu = Hardware::CPU.arm? ? "aarch64" : "x86_64"
+    os = OS.mac? ? "apple-darwin" : "unknown-linux-gnu"
+
+    "#{cpu}-#{os}"
+  end
+
+  def install_binary_aliases!
+    BINARY_ALIASES[target_triple.to_sym].each do |source, dests|
+      dests.each do |dest|
+        bin.install_symlink bin/source.to_s => dest
+      end
     end
   end
 
   def install
-    bin.install "ved"
-  end
+    bin.install "ved" if OS.mac? && Hardware::CPU.arm?
+    bin.install "ved" if OS.mac? && Hardware::CPU.intel?
+    bin.install "ved" if OS.linux? && Hardware::CPU.arm?
+    bin.install "ved" if OS.linux? && Hardware::CPU.intel?
 
-  test do
-    system "#{bin}/ved", "--version"
+    install_binary_aliases!
+
+    # Homebrew will automatically install these, so we don't need to do that
+    doc_files = Dir["README.*", "readme.*", "LICENSE", "LICENSE.*", "CHANGELOG.*"]
+    leftover_contents = Dir["*"] - doc_files
+
+    # Install any leftover files in pkgshare; these are probably config or
+    # sample files.
+    pkgshare.install(*leftover_contents) unless leftover_contents.empty?
   end
 end
