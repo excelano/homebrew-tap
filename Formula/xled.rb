@@ -1,36 +1,66 @@
 class Xled < Formula
-  desc "Sed and awk for tabular data over CSV and DSV files"
+  desc "sed and awk for tabular data — regex transforms over Excel-style ranges on CSV/DSV"
   homepage "https://excelano.com/xled/"
-  version "0.1.0"
-  license "MIT"
-
-  on_macos do
-    on_arm do
-      url "https://github.com/excelano/xled/releases/download/v0.1.0/xled-aarch64-apple-darwin.tar.xz"
-      sha256 "d2f08735788c758ddc7598ec584ea3f09ba5ad93a63b296e4da357b8b347df47"
+  version "0.2.0"
+  if OS.mac?
+    if Hardware::CPU.arm?
+      url "https://github.com/excelano/xled/releases/download/v0.2.0/xled-aarch64-apple-darwin.tar.xz"
+      sha256 "ab76feab7b491e74b703f2d99b435aae32150578c247b02dabafbc719ccf228f"
     end
-    on_intel do
-      url "https://github.com/excelano/xled/releases/download/v0.1.0/xled-x86_64-apple-darwin.tar.xz"
-      sha256 "1687fcaf0f955c75f536288acc7d82bf2eaedf2d438fe4656a068ef5d5bbcbf5"
+    if Hardware::CPU.intel?
+      url "https://github.com/excelano/xled/releases/download/v0.2.0/xled-x86_64-apple-darwin.tar.xz"
+      sha256 "02141c8bf58c4539b17690ff55cc98a54a3177f4392b9e4ec4d43caa337efbf8"
     end
   end
-
-  on_linux do
-    on_arm do
-      url "https://github.com/excelano/xled/releases/download/v0.1.0/xled-aarch64-unknown-linux-gnu.tar.xz"
-      sha256 "8b572e9ecf7ee68064b91d1c2deb98791b9f8863c411bf4617c45b8773e2c41d"
+  if OS.linux?
+    if Hardware::CPU.arm?
+      url "https://github.com/excelano/xled/releases/download/v0.2.0/xled-aarch64-unknown-linux-gnu.tar.xz"
+      sha256 "03535ec3d4a11005d43527327c28a6a67d492bb302b2e7d6a7b901f97fc64fb8"
     end
-    on_intel do
-      url "https://github.com/excelano/xled/releases/download/v0.1.0/xled-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "2b2e891ccaf63ea14afcd6cbdaf823cc5929ec14addbc8ec7558e8de89b80393"
+    if Hardware::CPU.intel?
+      url "https://github.com/excelano/xled/releases/download/v0.2.0/xled-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "3feb1e6060758a8956f96e56bbfe68ac86521cd69449c96b1af1db8063787ad6"
+    end
+  end
+  license "MIT"
+
+  BINARY_ALIASES = {
+    "aarch64-apple-darwin":      {},
+    "aarch64-unknown-linux-gnu": {},
+    "x86_64-apple-darwin":       {},
+    "x86_64-pc-windows-gnu":     {},
+    "x86_64-unknown-linux-gnu":  {},
+  }.freeze
+
+  def target_triple
+    cpu = Hardware::CPU.arm? ? "aarch64" : "x86_64"
+    os = OS.mac? ? "apple-darwin" : "unknown-linux-gnu"
+
+    "#{cpu}-#{os}"
+  end
+
+  def install_binary_aliases!
+    BINARY_ALIASES[target_triple.to_sym].each do |source, dests|
+      dests.each do |dest|
+        bin.install_symlink bin/source.to_s => dest
+      end
     end
   end
 
   def install
-    bin.install "xled"
-  end
+    bin.install "xled" if OS.mac? && Hardware::CPU.arm?
+    bin.install "xled" if OS.mac? && Hardware::CPU.intel?
+    bin.install "xled" if OS.linux? && Hardware::CPU.arm?
+    bin.install "xled" if OS.linux? && Hardware::CPU.intel?
 
-  test do
-    system "#{bin}/xled", "--version"
+    install_binary_aliases!
+
+    # Homebrew will automatically install these, so we don't need to do that
+    doc_files = Dir["README.*", "readme.*", "LICENSE", "LICENSE.*", "CHANGELOG.*"]
+    leftover_contents = Dir["*"] - doc_files
+
+    # Install any leftover files in pkgshare; these are probably config or
+    # sample files.
+    pkgshare.install(*leftover_contents) unless leftover_contents.empty?
   end
 end
