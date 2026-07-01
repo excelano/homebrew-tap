@@ -5,21 +5,21 @@
 class Blick < Formula
   desc "Check Microsoft 365 mail, Teams chats, and next meeting from the terminal"
   homepage "https://excelano.com/blick-cli/"
-  version "0.9.3"
+  version "0.10.0"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/excelano/blick-cli/releases/download/v0.9.3/blick_0.9.3_darwin_amd64.tar.gz"
-      sha256 "c4f906ad1c999810f1ff32bb05a33697330423cd70d9d1e2e95a987edd821959"
+      url "https://github.com/excelano/blick-cli/releases/download/v0.10.0/blick_0.10.0_darwin_amd64.tar.gz"
+      sha256 "55fcfa64655a723b6c2e06b2f210ede6106aacbf87cc9edb790d120bed3c28cc"
 
       define_method(:install) do
         bin.install "blick"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/excelano/blick-cli/releases/download/v0.9.3/blick_0.9.3_darwin_arm64.tar.gz"
-      sha256 "7ad4c361e696d5e04ad6d4d09bd39c3aff7f31e8fbdd082674039a2f11ecf68b"
+      url "https://github.com/excelano/blick-cli/releases/download/v0.10.0/blick_0.10.0_darwin_arm64.tar.gz"
+      sha256 "2983dfbacadaa9ca2b9e62c6681fb3d629792cac08e626c4b4c7359107c56d67"
 
       define_method(:install) do
         bin.install "blick"
@@ -29,15 +29,15 @@ class Blick < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/excelano/blick-cli/releases/download/v0.9.3/blick_0.9.3_linux_amd64.tar.gz"
-      sha256 "9d2f7c6c49d4c4ec0259a76af9bc63d80bde24d0654a5e5ede948242a7feecfd"
+      url "https://github.com/excelano/blick-cli/releases/download/v0.10.0/blick_0.10.0_linux_amd64.tar.gz"
+      sha256 "be8c6acfc383ecfb088cd32e830984d6a2c2683a71513e8572e64f85ffe5d7ad"
       define_method(:install) do
         bin.install "blick"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/excelano/blick-cli/releases/download/v0.9.3/blick_0.9.3_linux_arm64.tar.gz"
-      sha256 "4221829794f328988ab76ef56ade96d9b634080c1dd4db5d95480ae4837d48a3"
+      url "https://github.com/excelano/blick-cli/releases/download/v0.10.0/blick_0.10.0_linux_arm64.tar.gz"
+      sha256 "7ec54f031ddb16a6a8d8aba5d996f89115232799e1f446d4247ac1c6d667a90a"
       define_method(:install) do
         bin.install "blick"
       end
