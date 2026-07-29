@@ -1,36 +1,36 @@
 class Xray < Formula
   desc "a read-only profiler for tabular data — what a CSV/DSV is, before you edit or query it"
   homepage "https://excelano.com/xray/"
-  version "0.1.0"
+  version "0.2.0"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/excelano/xray/releases/download/v0.1.0/x-ray-aarch64-apple-darwin.tar.xz"
-      sha256 "e637f571cb5ac919733eaaa1d8bf83d33609ca148014805082ae09220ababd6c"
+      url "https://github.com/excelano/xray/releases/download/v0.2.0/x-ray-aarch64-apple-darwin.tar.xz"
+      sha256 "726f5c10b36d87ef68b9dc623372ea9553889e267ee2becdb9b8fc0cd9f85d0a"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/excelano/xray/releases/download/v0.1.0/x-ray-x86_64-apple-darwin.tar.xz"
-      sha256 "c770353c5e7293d7f95ce3e0c05c372652f9933dc19a4c86a8a9d21e8d8d5184"
+      url "https://github.com/excelano/xray/releases/download/v0.2.0/x-ray-x86_64-apple-darwin.tar.xz"
+      sha256 "e25f6fae007f92a296f1e0a3eb9e038218306c7c6dff8e95e64e6d71ddc534b1"
     end
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://github.com/excelano/xray/releases/download/v0.1.0/x-ray-aarch64-unknown-linux-gnu.tar.xz"
-      sha256 "8dc7309316093dee2ede4ad35425d73f66960c1eadb066e8b4ddbbe3fc7d095b"
+      url "https://github.com/excelano/xray/releases/download/v0.2.0/x-ray-aarch64-unknown-linux-gnu.tar.xz"
+      sha256 "f8aacd1d55a8a3ae1d843ff4e7873dee6511e1723dfb2eefc3ed6c718e63b41b"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/excelano/xray/releases/download/v0.1.0/x-ray-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "d354562f4f9a48a0467b5f7cca2902aff6f5d9495e54f87550bddea8048bad17"
+      url "https://github.com/excelano/xray/releases/download/v0.2.0/x-ray-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "f6f282a79d6844904a63e224e6da389ebfdb13b89dcf64baa4d766449ce053fd"
     end
   end
   license "MIT"
 
   BINARY_ALIASES = {
-    "aarch64-apple-darwin": {},
+    "aarch64-apple-darwin":      {},
     "aarch64-unknown-linux-gnu": {},
-    "x86_64-apple-darwin": {},
-    "x86_64-pc-windows-gnu": {},
-    "x86_64-unknown-linux-gnu": {}
-  }
+    "x86_64-apple-darwin":       {},
+    "x86_64-pc-windows-gnu":     {},
+    "x86_64-unknown-linux-gnu":  {},
+  }.freeze
 
   def target_triple
     cpu = Hardware::CPU.arm? ? "aarch64" : "x86_64"
@@ -48,18 +48,10 @@ class Xray < Formula
   end
 
   def install
-    if OS.mac? && Hardware::CPU.arm?
-      bin.install "xray"
-    end
-    if OS.mac? && Hardware::CPU.intel?
-      bin.install "xray"
-    end
-    if OS.linux? && Hardware::CPU.arm?
-      bin.install "xray"
-    end
-    if OS.linux? && Hardware::CPU.intel?
-      bin.install "xray"
-    end
+    bin.install "xray" if OS.mac? && Hardware::CPU.arm?
+    bin.install "xray" if OS.mac? && Hardware::CPU.intel?
+    bin.install "xray" if OS.linux? && Hardware::CPU.arm?
+    bin.install "xray" if OS.linux? && Hardware::CPU.intel?
 
     install_binary_aliases!
 
