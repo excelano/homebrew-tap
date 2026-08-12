@@ -1,25 +1,25 @@
 class Paxc < Formula
   desc "A compiler for the pax DSL, producing Power Automate cloud flow definitions"
   homepage "https://excelano.com/paxc/"
-  version "3.8.2"
+  version "3.9.0"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/excelano/paxc/releases/download/v3.8.2/paxc-aarch64-apple-darwin.tar.xz"
-      sha256 "48136fd8fa233d5b37dfc22d2b7e2bf9d74e14535bfd22923daa60c97bcc94f6"
+      url "https://github.com/excelano/paxc/releases/download/v3.9.0/paxc-aarch64-apple-darwin.tar.xz"
+      sha256 "a7763bf7cb0028266ec35682b21ac79e7f55c6cc19c82bbc25cc05dfd46e19a4"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/excelano/paxc/releases/download/v3.8.2/paxc-x86_64-apple-darwin.tar.xz"
-      sha256 "db007a7d4bf1f4d1c14523bc51f9c40963ec7c64f5faa79d5a732199aeaab51c"
+      url "https://github.com/excelano/paxc/releases/download/v3.9.0/paxc-x86_64-apple-darwin.tar.xz"
+      sha256 "7551255f545b7aaa5d4a84d7dd5e2a66a1eed4d6520847c1e48c2c2205816f37"
     end
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://github.com/excelano/paxc/releases/download/v3.8.2/paxc-aarch64-unknown-linux-gnu.tar.xz"
-      sha256 "ca9020bcb0386a0869c70a89f280048df54aebe045951e6f8fe22ad243f33daa"
+      url "https://github.com/excelano/paxc/releases/download/v3.9.0/paxc-aarch64-unknown-linux-gnu.tar.xz"
+      sha256 "8e33b71768775ee99f66258563d4823e4954a631ea5116f913e57f672474ed04"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/excelano/paxc/releases/download/v3.8.2/paxc-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "4843eb6a7fb4e7055566038bc3c10923ccd740402cfd1541f4323f29ef21cd47"
+      url "https://github.com/excelano/paxc/releases/download/v3.9.0/paxc-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "96308ee93e49b814de3cf2719cfaf89996103d558053c8897b13f212a5fdd030"
     end
   end
   license "MIT"
@@ -48,10 +48,18 @@ class Paxc < Formula
   end
 
   def install
-    bin.install "paxc", "paxr" if OS.mac? && Hardware::CPU.arm?
-    bin.install "paxc", "paxr" if OS.mac? && Hardware::CPU.intel?
-    bin.install "paxc", "paxr" if OS.linux? && Hardware::CPU.arm?
-    bin.install "paxc", "paxr" if OS.linux? && Hardware::CPU.intel?
+    if OS.mac? && Hardware::CPU.arm?
+      bin.install "paxc", "paxr"
+    end
+    if OS.mac? && Hardware::CPU.intel?
+      bin.install "paxc", "paxr"
+    end
+    if OS.linux? && Hardware::CPU.arm?
+      bin.install "paxc", "paxr"
+    end
+    if OS.linux? && Hardware::CPU.intel?
+      bin.install "paxc", "paxr"
+    end
 
     install_binary_aliases!
 
