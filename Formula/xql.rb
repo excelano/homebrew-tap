@@ -5,21 +5,21 @@
 class Xql < Formula
   desc "Run real SQL against SharePoint Lists and CSV files"
   homepage "https://excelano.com/xql/"
-  version "1.9.0"
+  version "1.10.0"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/excelano/xql/releases/download/v1.9.0/xql_1.9.0_darwin_amd64.tar.gz"
-      sha256 "5eeea1c5dee42e17496108714db76e30bdaf23491b2e007562498ede9849a544"
+      url "https://github.com/excelano/xql/releases/download/v1.10.0/xql_1.10.0_darwin_amd64.tar.gz"
+      sha256 "a4b09f254d7ca74c59eb1d8c4f856256271b38311785206ad31de097e3767e7f"
 
       define_method(:install) do
         bin.install "xql"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/excelano/xql/releases/download/v1.9.0/xql_1.9.0_darwin_arm64.tar.gz"
-      sha256 "663ed0982f40610ec475793b28810f87c9c45834db86a4f9608404f5f17c1757"
+      url "https://github.com/excelano/xql/releases/download/v1.10.0/xql_1.10.0_darwin_arm64.tar.gz"
+      sha256 "dc71ad86cbe8822f43ee6ef4bddc67477455bfe52bbb017f2e9d0b2f3ed6b2dd"
 
       define_method(:install) do
         bin.install "xql"
@@ -29,15 +29,15 @@ class Xql < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/excelano/xql/releases/download/v1.9.0/xql_1.9.0_linux_amd64.tar.gz"
-      sha256 "c608bc82efc386fa46a484b8383d8a705e130d71374e372c98785241dbdf341d"
+      url "https://github.com/excelano/xql/releases/download/v1.10.0/xql_1.10.0_linux_amd64.tar.gz"
+      sha256 "bb827385183ab04e378e9450b599e282fbbc8af3715f4e6ab35e97a95e1f245d"
       define_method(:install) do
         bin.install "xql"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/excelano/xql/releases/download/v1.9.0/xql_1.9.0_linux_arm64.tar.gz"
-      sha256 "4708bdb982825c95f69c10eab2605be9f8d396cf7706e154c16ef1ea7d368a53"
+      url "https://github.com/excelano/xql/releases/download/v1.10.0/xql_1.10.0_linux_arm64.tar.gz"
+      sha256 "e177a8d92ea0b3e719a07ed18d399a89d7883974fdebb98b0b10318a0a6881d0"
       define_method(:install) do
         bin.install "xql"
       end
