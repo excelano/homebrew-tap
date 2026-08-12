@@ -5,21 +5,21 @@
 class Xftp < Formula
   desc "FTP-style interactive client for SharePoint document libraries"
   homepage "https://excelano.com/xftp/"
-  version "1.7.0"
+  version "1.8.0"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/excelano/xfiles/releases/download/v1.7.0/xftp_1.7.0_darwin_amd64.tar.gz"
-      sha256 "e6ddd21531043876fd05ebd28f36df4268cfc14e4ffb5fbbd6590f20459e8e42"
+      url "https://github.com/excelano/xfiles/releases/download/v1.8.0/xftp_1.8.0_darwin_amd64.tar.gz"
+      sha256 "c950f3f1bfa6b626b497ec3d43b0117abd4fe5dc3ea5ec881005cbf62426c58c"
 
       define_method(:install) do
         bin.install "xftp"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/excelano/xfiles/releases/download/v1.7.0/xftp_1.7.0_darwin_arm64.tar.gz"
-      sha256 "be775bdf97a14410fe60ff34fcf50e0c49e8de22caf2fb030e5780f2624efbc4"
+      url "https://github.com/excelano/xfiles/releases/download/v1.8.0/xftp_1.8.0_darwin_arm64.tar.gz"
+      sha256 "de76fc9b2d45b9c25bfa817f18831d78dc9108e7dcd46a52ea182b37a5efff79"
 
       define_method(:install) do
         bin.install "xftp"
@@ -29,15 +29,15 @@ class Xftp < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/excelano/xfiles/releases/download/v1.7.0/xftp_1.7.0_linux_amd64.tar.gz"
-      sha256 "eb54c4bcc1f3433f5c44280e0e51ba07e052b2d62385138376bbe3d2024fff35"
+      url "https://github.com/excelano/xfiles/releases/download/v1.8.0/xftp_1.8.0_linux_amd64.tar.gz"
+      sha256 "e9a94296ef434cb8d45b3c6300a9b26825c00a0ff1ed9de030679e1267b614dc"
       define_method(:install) do
         bin.install "xftp"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/excelano/xfiles/releases/download/v1.7.0/xftp_1.7.0_linux_arm64.tar.gz"
-      sha256 "ed2f925e9909a5f6c79c74a16dc814f06a785f4aa02b042940a126792a56ed2f"
+      url "https://github.com/excelano/xfiles/releases/download/v1.8.0/xftp_1.8.0_linux_arm64.tar.gz"
+      sha256 "248f613c820e26abd068438a61d235e244c7f20ade859a4305f9f6742dffb0ff"
       define_method(:install) do
         bin.install "xftp"
       end
