@@ -1,25 +1,25 @@
 class Xray < Formula
   desc "a read-only profiler for tabular data — what a CSV/DSV is, before you edit or query it"
   homepage "https://excelano.com/xray/"
-  version "0.3.0"
+  version "0.4.0"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/excelano/xray/releases/download/v0.3.0/x-ray-aarch64-apple-darwin.tar.xz"
-      sha256 "b1f6da1c048eb85ba71737acc8c3d2a17043ad56d5d93656039ac2c080a36938"
+      url "https://github.com/excelano/xray/releases/download/v0.4.0/x-ray-aarch64-apple-darwin.tar.xz"
+      sha256 "0c25104f616fc9008d84a6bf3b96feda4e1a6a81cb5696babe6efcb1987739d2"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/excelano/xray/releases/download/v0.3.0/x-ray-x86_64-apple-darwin.tar.xz"
-      sha256 "313252d05e8067c5575cf837222e698a65e73ec225a3ef60e30a092b6b2718d4"
+      url "https://github.com/excelano/xray/releases/download/v0.4.0/x-ray-x86_64-apple-darwin.tar.xz"
+      sha256 "8d3eaf6abfe65e7722e052c5c791ab9b8c6359073408e3242a6b3b099450c613"
     end
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://github.com/excelano/xray/releases/download/v0.3.0/x-ray-aarch64-unknown-linux-gnu.tar.xz"
-      sha256 "1b49884df1db34633a79c03b2ca17685012377b6e7b950f46d61a8090354743c"
+      url "https://github.com/excelano/xray/releases/download/v0.4.0/x-ray-aarch64-unknown-linux-gnu.tar.xz"
+      sha256 "a1dc3d2d69d8bae1da9a598d274e84f9c412f40a7c99284a3e3437ba174325f6"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/excelano/xray/releases/download/v0.3.0/x-ray-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "83137b754325d6fb442bb308fddee9d4572222de35303c47098429de27056761"
+      url "https://github.com/excelano/xray/releases/download/v0.4.0/x-ray-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "841db8aa42f269ea56ee873b5b9c1f47cf32e54123a8fe53916a189790239b3c"
     end
   end
   license "MIT"
@@ -48,10 +48,18 @@ class Xray < Formula
   end
 
   def install
-    bin.install "xray" if OS.mac? && Hardware::CPU.arm?
-    bin.install "xray" if OS.mac? && Hardware::CPU.intel?
-    bin.install "xray" if OS.linux? && Hardware::CPU.arm?
-    bin.install "xray" if OS.linux? && Hardware::CPU.intel?
+    if OS.mac? && Hardware::CPU.arm?
+      bin.install "xray"
+    end
+    if OS.mac? && Hardware::CPU.intel?
+      bin.install "xray"
+    end
+    if OS.linux? && Hardware::CPU.arm?
+      bin.install "xray"
+    end
+    if OS.linux? && Hardware::CPU.intel?
+      bin.install "xray"
+    end
 
     install_binary_aliases!
 
