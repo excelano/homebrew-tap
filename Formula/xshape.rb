@@ -1,25 +1,25 @@
 class Xshape < Formula
   desc "reshape tabular data — pivot, unpivot, split, merge, explode, transpose — without touching a value"
   homepage "https://excelano.com/xshape/"
-  version "0.4.0"
+  version "0.5.0"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/excelano/xshape/releases/download/v0.4.0/xshape-aarch64-apple-darwin.tar.xz"
-      sha256 "4485931ccfe98a44825a19115e091fd24c85bb5b1c26093dc68c696064f14af1"
+      url "https://github.com/excelano/xshape/releases/download/v0.5.0/xshape-aarch64-apple-darwin.tar.xz"
+      sha256 "337129485349feb37c1aa29b757057743b2541162d460b65391e8d09f7fed158"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/excelano/xshape/releases/download/v0.4.0/xshape-x86_64-apple-darwin.tar.xz"
-      sha256 "58fcc5fe3df9b38f590f48f7faebc4c1713854a3d20df20cf78554013087604e"
+      url "https://github.com/excelano/xshape/releases/download/v0.5.0/xshape-x86_64-apple-darwin.tar.xz"
+      sha256 "3188c98f9406c55ad4944de8cb160bfbcd3eef8ee6392f843619a884c51dd052"
     end
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://github.com/excelano/xshape/releases/download/v0.4.0/xshape-aarch64-unknown-linux-gnu.tar.xz"
-      sha256 "597610be43424c2747a7b34e148bbd31f4d70ee3c8dcdd0d04d29b8c7db885c1"
+      url "https://github.com/excelano/xshape/releases/download/v0.5.0/xshape-aarch64-unknown-linux-gnu.tar.xz"
+      sha256 "2060eff45d171b6c407bd86fe0473a4e7ba7a7ed6bc6f6643b85e8117d922b31"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/excelano/xshape/releases/download/v0.4.0/xshape-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "9cacd140659c0185303c417c13e76d89169b789dc63bbb8ab382504511bb2632"
+      url "https://github.com/excelano/xshape/releases/download/v0.5.0/xshape-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "6fd862fde0765ad1b08332f213110dcb1a162edabaa4c1b90fab1f58460ee4fd"
     end
   end
   license "MIT"
