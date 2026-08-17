@@ -1,25 +1,25 @@
 class Xled < Formula
   desc "sed and awk for tabular data — regex transforms over Excel-style ranges on CSV/DSV"
   homepage "https://excelano.com/xled/"
-  version "0.12.0"
+  version "0.12.1"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/excelano/xled/releases/download/v0.12.0/xled-aarch64-apple-darwin.tar.xz"
-      sha256 "0f6b2ad72f97070993e6a6f5559f3b35a720ed4a1598be3aa519e1f38058794d"
+      url "https://github.com/excelano/xled/releases/download/v0.12.1/xled-aarch64-apple-darwin.tar.xz"
+      sha256 "eb129be143945f50b8cd5e649e61db56e59bf9e90052becaad931a6c04f96654"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/excelano/xled/releases/download/v0.12.0/xled-x86_64-apple-darwin.tar.xz"
-      sha256 "99a5233f595b7053d10078a106a10513620b83a72ef9370f6040558f051d43e3"
+      url "https://github.com/excelano/xled/releases/download/v0.12.1/xled-x86_64-apple-darwin.tar.xz"
+      sha256 "c057d7c157efa1be55f1455ae05d7282d269b7bac4905d0823abbfd57626ffcc"
     end
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://github.com/excelano/xled/releases/download/v0.12.0/xled-aarch64-unknown-linux-gnu.tar.xz"
-      sha256 "4315efdf83aac12464373ea18e7d7248cf764fea78ba32748e531b78e383aed2"
+      url "https://github.com/excelano/xled/releases/download/v0.12.1/xled-aarch64-unknown-linux-gnu.tar.xz"
+      sha256 "8ed75a1d0eb4474c33c1e0f502087fcc870d05c39ac83f42801dba0559ca7fb1"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/excelano/xled/releases/download/v0.12.0/xled-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "25833e5e6a8a566a34aca98ff9f433f81cfee869fda03e9ef9d4ae1440d22a2c"
+      url "https://github.com/excelano/xled/releases/download/v0.12.1/xled-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "4611cfd654d09c16686560f7caecaa762adeb6076036b2d251fb32ae9e329d9a"
     end
   end
   license "MIT"
