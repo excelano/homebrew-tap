@@ -1,25 +1,25 @@
 class Slipcase < Formula
   desc "Pack, unpack, repack, inspect, and validate slipcase containers: a ZIP holding a payload file and the TOML metadata that describes it"
   homepage "https://github.com/excelano/slipcase"
-  version "0.3.3"
+  version "0.3.4"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/excelano/slpc-rust/releases/download/v0.3.3/slipcase-aarch64-apple-darwin.tar.xz"
-      sha256 "ed6903ffd62fb7209a7359d9319b39f6a54394762b09e2b599340636288c444e"
+      url "https://github.com/excelano/slpc-rust/releases/download/v0.3.4/slipcase-aarch64-apple-darwin.tar.xz"
+      sha256 "42ece6a448bb923370f9072b857ffe3b6ca680d78d07d28b5887039781f96e6e"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/excelano/slpc-rust/releases/download/v0.3.3/slipcase-x86_64-apple-darwin.tar.xz"
-      sha256 "e7a8c9e2a57eadf0d245f58ab5c91a234b391c49b3c16b9febe589504c9afb74"
+      url "https://github.com/excelano/slpc-rust/releases/download/v0.3.4/slipcase-x86_64-apple-darwin.tar.xz"
+      sha256 "ce274cba6fc1257c95b72bd1b64370577a93c3a3239ab88af2ea158cc01c33f9"
     end
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://github.com/excelano/slpc-rust/releases/download/v0.3.3/slipcase-aarch64-unknown-linux-gnu.tar.xz"
-      sha256 "bbe575e5bcea358d5e7282c3763f529aaf4d19b003762b0c6b7ec97aa122dd17"
+      url "https://github.com/excelano/slpc-rust/releases/download/v0.3.4/slipcase-aarch64-unknown-linux-gnu.tar.xz"
+      sha256 "03a43f3a40c0fd4d6769d8ec8e803837ccc0810cb89d3c8a485ff4ec981213a0"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/excelano/slpc-rust/releases/download/v0.3.3/slipcase-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "b4b0bbd7a25783eabeafe9f40e89bd7959abe4f7129d996a3eca941c97ebc496"
+      url "https://github.com/excelano/slpc-rust/releases/download/v0.3.4/slipcase-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "2a64c1cb6bf4b33fae9e8930f227c484596d5332b42d167ad86c9d06f2a82b32"
     end
   end
   license "MIT"
