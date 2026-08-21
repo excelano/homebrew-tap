@@ -1,25 +1,25 @@
 class Slipcase < Formula
-  desc "Pack, unpack, inspect, and validate slipcase containers: a ZIP holding a payload file and the TOML metadata that describes it"
+  desc "Pack, unpack, repack, inspect, and validate slipcase containers: a ZIP holding a payload file and the TOML metadata that describes it"
   homepage "https://github.com/excelano/slipcase"
-  version "0.2.0"
+  version "0.3.0"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/excelano/slpc-rust/releases/download/v0.2.0/slipcase-aarch64-apple-darwin.tar.xz"
-      sha256 "5dc6609850066960ac4e31f144501b6cb90bbc4a0a989dffc8d5390582856591"
+      url "https://github.com/excelano/slpc-rust/releases/download/v0.3.0/slipcase-aarch64-apple-darwin.tar.xz"
+      sha256 "459555fc82a7c62c8ed5eb74ba843a4827063ce96c546274d09962c68dcb3e58"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/excelano/slpc-rust/releases/download/v0.2.0/slipcase-x86_64-apple-darwin.tar.xz"
-      sha256 "c439affb99bbf2a0154bd9efc2b1afb9dc0dafd3c3330b4890d9df98df06f963"
+      url "https://github.com/excelano/slpc-rust/releases/download/v0.3.0/slipcase-x86_64-apple-darwin.tar.xz"
+      sha256 "7ab596e2708a9a759e8d7f2e5e33257e2d12359d20ab87745ad247e44f0a8102"
     end
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://github.com/excelano/slpc-rust/releases/download/v0.2.0/slipcase-aarch64-unknown-linux-gnu.tar.xz"
-      sha256 "04c36f48a19c35befd32f73001f6b9be311af1c172a32ebae64396b5185313fb"
+      url "https://github.com/excelano/slpc-rust/releases/download/v0.3.0/slipcase-aarch64-unknown-linux-gnu.tar.xz"
+      sha256 "f14591b3765435380776de882f56949f9ca7d9f6ed2489b78c2919146084a555"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/excelano/slpc-rust/releases/download/v0.2.0/slipcase-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "314476db80d137bd4ff11f1bbc8ff856b5de80e55694f52f93be061833f6b898"
+      url "https://github.com/excelano/slpc-rust/releases/download/v0.3.0/slipcase-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "c37e63581d9f7169cc27b0859f4167ff180492889635273f6c44ce24bed3a110"
     end
   end
   license "MIT"
