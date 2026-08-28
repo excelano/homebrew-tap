@@ -1,25 +1,25 @@
 class Slipcase < Formula
   desc "Pack, unpack, repack, inspect, and validate slipcase containers: a ZIP holding a payload file and the TOML metadata that describes it"
   homepage "https://github.com/excelano/slipcase"
-  version "0.3.9"
+  version "0.3.10"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/excelano/slpc-rust/releases/download/v0.3.9/slipcase-aarch64-apple-darwin.tar.xz"
-      sha256 "34089db57f7fb83d1471f73bf8f8c3b8f8e0974ae1b9fdfdac9579868fa1bea7"
+      url "https://github.com/excelano/slpc-rust/releases/download/v0.3.10/slipcase-aarch64-apple-darwin.tar.xz"
+      sha256 "2910e245e0e382ff1155ee49829e6566ab224a2c073c637911cffc8464c36832"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/excelano/slpc-rust/releases/download/v0.3.9/slipcase-x86_64-apple-darwin.tar.xz"
-      sha256 "3378a4c79664de8cb3842713e69b7d02ca120ff7974ba3dd017b2b2308a65c9d"
+      url "https://github.com/excelano/slpc-rust/releases/download/v0.3.10/slipcase-x86_64-apple-darwin.tar.xz"
+      sha256 "2f12dfe551641181268061789227441f31ec70bc2e61f2559021613656b6abc3"
     end
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://github.com/excelano/slpc-rust/releases/download/v0.3.9/slipcase-aarch64-unknown-linux-gnu.tar.xz"
-      sha256 "371e7f312d7c784e2767c1c4d374cf78f0786fb6611f10f66fa117bfceb89144"
+      url "https://github.com/excelano/slpc-rust/releases/download/v0.3.10/slipcase-aarch64-unknown-linux-gnu.tar.xz"
+      sha256 "5e2c1dd4441b0216bb2f2c40b0459cb02f4fa6d6eb904645908c980f9e67fed6"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/excelano/slpc-rust/releases/download/v0.3.9/slipcase-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "7ec803f8b242603c9e0c9729fed4cdbb7a1033d790569700f2753a69c524ad02"
+      url "https://github.com/excelano/slpc-rust/releases/download/v0.3.10/slipcase-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "3918df0f22f2018105c443a5a4625be9c6121e11b4e31431db61ef909fdcc249"
     end
   end
   license "MIT"
