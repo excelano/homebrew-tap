@@ -1,25 +1,25 @@
 class Slipcase < Formula
   desc "Pack, unpack, repack, inspect, and validate slipcase containers: a ZIP holding a payload file and the TOML metadata that describes it"
   homepage "https://github.com/excelano/slipcase"
-  version "0.3.10"
+  version "0.3.11"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/excelano/slpc-rust/releases/download/v0.3.10/slipcase-aarch64-apple-darwin.tar.xz"
-      sha256 "2910e245e0e382ff1155ee49829e6566ab224a2c073c637911cffc8464c36832"
+      url "https://github.com/excelano/slpc-rust/releases/download/v0.3.11/slipcase-aarch64-apple-darwin.tar.xz"
+      sha256 "a3ac31297205f91ef68931ddf697c1ab8b3c4e18bb06bbae3ab5020183e4201f"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/excelano/slpc-rust/releases/download/v0.3.10/slipcase-x86_64-apple-darwin.tar.xz"
-      sha256 "2f12dfe551641181268061789227441f31ec70bc2e61f2559021613656b6abc3"
+      url "https://github.com/excelano/slpc-rust/releases/download/v0.3.11/slipcase-x86_64-apple-darwin.tar.xz"
+      sha256 "7e1109add5b174c0d9c2ccc8236309080c8026b2719f13c55da58decc36b86ac"
     end
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://github.com/excelano/slpc-rust/releases/download/v0.3.10/slipcase-aarch64-unknown-linux-gnu.tar.xz"
-      sha256 "5e2c1dd4441b0216bb2f2c40b0459cb02f4fa6d6eb904645908c980f9e67fed6"
+      url "https://github.com/excelano/slpc-rust/releases/download/v0.3.11/slipcase-aarch64-unknown-linux-gnu.tar.xz"
+      sha256 "c973190f2a9093fdef93d4aa6920942ae8cfe02ea1a34aebab92b3b35b2fa67d"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/excelano/slpc-rust/releases/download/v0.3.10/slipcase-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "3918df0f22f2018105c443a5a4625be9c6121e11b4e31431db61ef909fdcc249"
+      url "https://github.com/excelano/slpc-rust/releases/download/v0.3.11/slipcase-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "63e5cfcaf0e3847ce3eb169680c5d90f23ea14a232d24ac233d0097b5e392197"
     end
   end
   license "MIT"
