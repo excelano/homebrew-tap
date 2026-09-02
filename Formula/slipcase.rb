@@ -1,6 +1,6 @@
 class Slipcase < Formula
-  desc "Pack, unpack, repack, inspect, and validate slipcase containers: a ZIP holding a payload file and the TOML metadata that describes it"
-  homepage "https://github.com/excelano/slipcase"
+  desc "Pack, unpack, repack, inspect, and validate Slipcase containers: a ZIP holding a payload file and the TOML metadata that describes it"
+  homepage "https://slipcaseformat.org"
   version "0.3.11"
   if OS.mac?
     if Hardware::CPU.arm?
