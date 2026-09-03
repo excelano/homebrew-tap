@@ -5,21 +5,21 @@
 class Xfind < Formula
   desc "Find files in SharePoint document libraries, like find"
   homepage "https://excelano.com/xftp/"
-  version "1.9.0"
+  version "1.10.0"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/excelano/xfiles/releases/download/v1.9.0/xfind_1.9.0_darwin_amd64.tar.gz"
-      sha256 "388958e222422cde3464a9112930fe1eb2d68402240419ad4d272123d7415a6c"
+      url "https://github.com/excelano/xfiles/releases/download/v1.10.0/xfind_1.10.0_darwin_amd64.tar.gz"
+      sha256 "964b6442f0fe612ce6bf85770981c2d2b56154b038df155508c4adcaae4273f2"
 
       define_method(:install) do
         bin.install "xfind"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/excelano/xfiles/releases/download/v1.9.0/xfind_1.9.0_darwin_arm64.tar.gz"
-      sha256 "b0a5a2c1104d2f0934af034d28450b09aeba0f7799124ff8fef333d0ef1b1682"
+      url "https://github.com/excelano/xfiles/releases/download/v1.10.0/xfind_1.10.0_darwin_arm64.tar.gz"
+      sha256 "7143658ffe11dc75e903974cc66885723729d79dc26bb3cc00787f233aa295da"
 
       define_method(:install) do
         bin.install "xfind"
@@ -29,15 +29,15 @@ class Xfind < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/excelano/xfiles/releases/download/v1.9.0/xfind_1.9.0_linux_amd64.tar.gz"
-      sha256 "de618fb74fb37677fb77374fb241d329c4c5fe13f7bc99709ff02157ddc4c7c0"
+      url "https://github.com/excelano/xfiles/releases/download/v1.10.0/xfind_1.10.0_linux_amd64.tar.gz"
+      sha256 "6f143e6ef081f89facb7762a8ad8696859db17f9f944fdf52d5c54f997419709"
       define_method(:install) do
         bin.install "xfind"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/excelano/xfiles/releases/download/v1.9.0/xfind_1.9.0_linux_arm64.tar.gz"
-      sha256 "4db17789fe97daa48705884f2b53269d4038d8133dc5a76d29eb4ae6bb9a0445"
+      url "https://github.com/excelano/xfiles/releases/download/v1.10.0/xfind_1.10.0_linux_arm64.tar.gz"
+      sha256 "fc024aba6e6b734e7f5cd7c1caded452f98cb60e650c0501d949f72fc52350a1"
       define_method(:install) do
         bin.install "xfind"
       end
