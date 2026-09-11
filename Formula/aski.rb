@@ -1,25 +1,25 @@
 class Aski < Formula
   desc "one-shot questions for command-line LLMs — no quotes, no follow-up"
   homepage "https://github.com/excelano/aski"
-  version "0.1.0"
+  version "0.2.0"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/excelano/aski/releases/download/v0.1.0/aski-aarch64-apple-darwin.tar.xz"
-      sha256 "569afd378e633ba1a82bbce0cf96b460eaf2ed0de57d014571d1a18ecedb0261"
+      url "https://github.com/excelano/aski/releases/download/v0.2.0/aski-aarch64-apple-darwin.tar.xz"
+      sha256 "824c1948c600da4b7f2ed7246b2b49734a33a2ad2f2f1c34cea26b5fef0ced46"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/excelano/aski/releases/download/v0.1.0/aski-x86_64-apple-darwin.tar.xz"
-      sha256 "a2d4487367d4171bb31734f32dbac7153b2bb7f4ab8808f4341bb3810482bab0"
+      url "https://github.com/excelano/aski/releases/download/v0.2.0/aski-x86_64-apple-darwin.tar.xz"
+      sha256 "0a7445f5319d03d746aa73f01c1c60fab457e3e5fc2464d687e78194e2966a75"
     end
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://github.com/excelano/aski/releases/download/v0.1.0/aski-aarch64-unknown-linux-gnu.tar.xz"
-      sha256 "483d0aa47dc90cd94a982f94f7c7ab1235060673b1a064584b295bf0339a9732"
+      url "https://github.com/excelano/aski/releases/download/v0.2.0/aski-aarch64-unknown-linux-gnu.tar.xz"
+      sha256 "aae85231abc8886c27f4e25a17f15cbd286e60820425e93cbe850adff80f824a"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/excelano/aski/releases/download/v0.1.0/aski-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "0318ec53f9a98af1461cdde55d93b55cd3f6e198d2450a8bc5507b774fb43211"
+      url "https://github.com/excelano/aski/releases/download/v0.2.0/aski-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "19ba3bbaa950d71508fb5fda9a7a2da0cbe392054aca4a90299979926e11e140"
     end
   end
   license "MIT"
