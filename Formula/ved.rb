@@ -1,25 +1,25 @@
 class Ved < Formula
-  desc "The verbose ed — a drop-in compatible ed clone with friendly errors and a built-in help system"
+  desc "The verbose ed — an ed clone with friendly errors and a built-in help system"
   homepage "https://excelano.com/ved/"
-  version "0.2.0"
+  version "0.2.1"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/excelano/ved/releases/download/v0.2.0/ved-aarch64-apple-darwin.tar.xz"
-      sha256 "2e45f554fa544e411780b03f8cb598d49e1a7d88df0d6c1e725f60b95bd83e6a"
+      url "https://github.com/excelano/ved/releases/download/v0.2.1/ved-aarch64-apple-darwin.tar.xz"
+      sha256 "4297e83fd811e228e64ab85e2f0c564d369408dd63fc56c30ba8cee5c9277a64"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/excelano/ved/releases/download/v0.2.0/ved-x86_64-apple-darwin.tar.xz"
-      sha256 "9286dac7105498a7b7f2a4aa9a271a8c6b1ad531d933e1c46a4b0ef69047e295"
+      url "https://github.com/excelano/ved/releases/download/v0.2.1/ved-x86_64-apple-darwin.tar.xz"
+      sha256 "3d1d0302a8572771c77eb469a51946d415fcabd05f6bfce50d00fe5a5d8990dc"
     end
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://github.com/excelano/ved/releases/download/v0.2.0/ved-aarch64-unknown-linux-gnu.tar.xz"
-      sha256 "43882f798aedde04a143eecadda8afa93754b28798c9e93e8e2681e2a56f6b32"
+      url "https://github.com/excelano/ved/releases/download/v0.2.1/ved-aarch64-unknown-linux-gnu.tar.xz"
+      sha256 "e32a3d7b8de633a003eebd098fde1fe89440eef49c2672b8ca01a3b3bf2a5826"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/excelano/ved/releases/download/v0.2.0/ved-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "2d7dc6805c66498d0338a9bebed4d5e4e5c565006554463a17101a1961891dd7"
+      url "https://github.com/excelano/ved/releases/download/v0.2.1/ved-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "d7cd82392aa16866ce343ef97267ad9988f8cdc6767c5425fbe8313986ffe5fb"
     end
   end
   license "MIT"
@@ -48,10 +48,18 @@ class Ved < Formula
   end
 
   def install
-    bin.install "ved" if OS.mac? && Hardware::CPU.arm?
-    bin.install "ved" if OS.mac? && Hardware::CPU.intel?
-    bin.install "ved" if OS.linux? && Hardware::CPU.arm?
-    bin.install "ved" if OS.linux? && Hardware::CPU.intel?
+    if OS.mac? && Hardware::CPU.arm?
+      bin.install "ved"
+    end
+    if OS.mac? && Hardware::CPU.intel?
+      bin.install "ved"
+    end
+    if OS.linux? && Hardware::CPU.arm?
+      bin.install "ved"
+    end
+    if OS.linux? && Hardware::CPU.intel?
+      bin.install "ved"
+    end
 
     install_binary_aliases!
 
