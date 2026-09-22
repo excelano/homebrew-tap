@@ -1,36 +1,36 @@
 class Slipql < Formula
-  desc "A query language for Slipcase metadata: select, from, where over a directory of containers"
+  desc "A query language for Slipcase flyleaves: select, from, where over a directory of containers"
   homepage "https://slipcaseformat.org"
-  version "0.1.0"
+  version "0.1.1"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/excelano/slipql/releases/download/v0.1.0/slipql-aarch64-apple-darwin.tar.xz"
-      sha256 "ccb8c116dd472181d5ac65116a784453a98c06c28c4cd0000500c43311b1ee3a"
+      url "https://github.com/excelano/slipql/releases/download/v0.1.1/slipql-aarch64-apple-darwin.tar.xz"
+      sha256 "53729cbb26eb015a7affd5db76d7b745414a75f443fde706cb9c881220712456"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/excelano/slipql/releases/download/v0.1.0/slipql-x86_64-apple-darwin.tar.xz"
-      sha256 "c5db9c89b7af3fe37cc2637f364ba7dabe6926fa5110b16f7bbb08430d5740db"
+      url "https://github.com/excelano/slipql/releases/download/v0.1.1/slipql-x86_64-apple-darwin.tar.xz"
+      sha256 "042280b8f840e099db963e7f20a0fe1ad8a64fef94c024f63f0929d9d9c18340"
     end
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://github.com/excelano/slipql/releases/download/v0.1.0/slipql-aarch64-unknown-linux-gnu.tar.xz"
-      sha256 "16ec617735856458f4a5b0b08047b2b5a5e31587015b02e351b586c18404a3e7"
+      url "https://github.com/excelano/slipql/releases/download/v0.1.1/slipql-aarch64-unknown-linux-gnu.tar.xz"
+      sha256 "9d8119aeddd602e5da1fff0c39666c57117369d1de376e9af8ab1fac7e736fd7"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/excelano/slipql/releases/download/v0.1.0/slipql-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "7a4ab5b343ccf31714d98f09f6991ab23a2d083e489dbcd7d88175696f9c2f76"
+      url "https://github.com/excelano/slipql/releases/download/v0.1.1/slipql-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "519278d55f6eef1f9f4deea4396f683c197c93d97ee74ff474622aa6f5f72dd5"
     end
   end
   license "MIT"
 
   BINARY_ALIASES = {
-    "aarch64-apple-darwin": {},
+    "aarch64-apple-darwin":      {},
     "aarch64-unknown-linux-gnu": {},
-    "x86_64-apple-darwin": {},
-    "x86_64-pc-windows-gnu": {},
-    "x86_64-unknown-linux-gnu": {}
-  }
+    "x86_64-apple-darwin":       {},
+    "x86_64-pc-windows-gnu":     {},
+    "x86_64-unknown-linux-gnu":  {},
+  }.freeze
 
   def target_triple
     cpu = Hardware::CPU.arm? ? "aarch64" : "x86_64"
