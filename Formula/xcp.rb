@@ -5,21 +5,21 @@
 class Xcp < Formula
   desc "Copy files to and from SharePoint document libraries, like cp"
   homepage "https://excelano.com/xftp/"
-  version "1.10.0"
+  version "1.10.1"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/excelano/xfiles/releases/download/v1.10.0/xcp_1.10.0_darwin_amd64.tar.gz"
-      sha256 "cf8f291db38f63a7a7217e28d0bc8b211d058bd0207e281838065f11d6213c07"
+      url "https://github.com/excelano/xfiles/releases/download/v1.10.1/xcp_1.10.1_darwin_amd64.tar.gz"
+      sha256 "3ad006d093876f9dee8e438d47a93bb345b05731aef46a484a0c468dc5971f7d"
 
       define_method(:install) do
         bin.install "xcp"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/excelano/xfiles/releases/download/v1.10.0/xcp_1.10.0_darwin_arm64.tar.gz"
-      sha256 "76fdd8cf6ccb8e78f673e0fdb613a1bb576a4035394289b7d7e710b20553919a"
+      url "https://github.com/excelano/xfiles/releases/download/v1.10.1/xcp_1.10.1_darwin_arm64.tar.gz"
+      sha256 "59b3e848af92d264e3000ba5b4f581818d4061ead69584ad596483e8550a99b9"
 
       define_method(:install) do
         bin.install "xcp"
@@ -29,15 +29,15 @@ class Xcp < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/excelano/xfiles/releases/download/v1.10.0/xcp_1.10.0_linux_amd64.tar.gz"
-      sha256 "797b196a9f8ac9e5ad57b16e03d366cc2884d368a8b7a8cdc081d9aee19c0ea4"
+      url "https://github.com/excelano/xfiles/releases/download/v1.10.1/xcp_1.10.1_linux_amd64.tar.gz"
+      sha256 "1fdb2b62351e51f32554c124b94dc0102fec60647b7db82fec6b875acc34402e"
       define_method(:install) do
         bin.install "xcp"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/excelano/xfiles/releases/download/v1.10.0/xcp_1.10.0_linux_arm64.tar.gz"
-      sha256 "9217addd3ea85d550f16e3c4fcae4178115ac25a802f2046f69b14cd2e6d610d"
+      url "https://github.com/excelano/xfiles/releases/download/v1.10.1/xcp_1.10.1_linux_arm64.tar.gz"
+      sha256 "902356ab2b960bae4f1a7afe905f847114e8ffe9d8cae2b5a253d09eb8f455ab"
       define_method(:install) do
         bin.install "xcp"
       end
