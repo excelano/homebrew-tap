@@ -5,21 +5,21 @@
 class Xsync < Formula
   desc "Sync local directories with SharePoint document libraries"
   homepage "https://excelano.com/xftp/"
-  version "1.10.1"
+  version "1.10.2"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/excelano/xfiles/releases/download/v1.10.1/xsync_1.10.1_darwin_amd64.tar.gz"
-      sha256 "db2ca4847e45c19071abfc7cc2bb9689e3581f9e890f12923b59850b8f2805ce"
+      url "https://github.com/excelano/xfiles/releases/download/v1.10.2/xsync_1.10.2_darwin_amd64.tar.gz"
+      sha256 "f269096e095dddc3c2677f67287dbb085f8d9c442acf3524851628c5393675df"
 
       define_method(:install) do
         bin.install "xsync"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/excelano/xfiles/releases/download/v1.10.1/xsync_1.10.1_darwin_arm64.tar.gz"
-      sha256 "0024c5610925cc3daf0590fd5927eceb1c3d834a53ef385e0dc8acda75f5d10c"
+      url "https://github.com/excelano/xfiles/releases/download/v1.10.2/xsync_1.10.2_darwin_arm64.tar.gz"
+      sha256 "840f41ce4009d865d7e330ebe3fed191061064f48ef3681ffe996984f1aad0ec"
 
       define_method(:install) do
         bin.install "xsync"
@@ -29,15 +29,15 @@ class Xsync < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/excelano/xfiles/releases/download/v1.10.1/xsync_1.10.1_linux_amd64.tar.gz"
-      sha256 "a2883e4201b152e74188cc6bde8e5cdb74aa3dbc8fb1d5ea714324ae08a871d9"
+      url "https://github.com/excelano/xfiles/releases/download/v1.10.2/xsync_1.10.2_linux_amd64.tar.gz"
+      sha256 "de209abf62dfe5ba50138e3f9aa308dc2dea2532b4941a1a086adbe162162fc3"
       define_method(:install) do
         bin.install "xsync"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/excelano/xfiles/releases/download/v1.10.1/xsync_1.10.1_linux_arm64.tar.gz"
-      sha256 "e9f2efeefde02ec3b9f74190ee31e81b7b45e7388d3ebfa02aac2e82db145ea6"
+      url "https://github.com/excelano/xfiles/releases/download/v1.10.2/xsync_1.10.2_linux_arm64.tar.gz"
+      sha256 "00dc0c07c5bd58136c160d8d8136e1ccf67267741ba4b40bf691f7097cfd07a9"
       define_method(:install) do
         bin.install "xsync"
       end
