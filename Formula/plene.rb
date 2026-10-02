@@ -1,25 +1,25 @@
 class Plene < Formula
   desc "Shows Rust source alongside an expanded transcription: the same code with abbreviations and symbols written out in words"
   homepage "https://excelano.com/plene/"
-  version "0.2.0"
+  version "0.3.0"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/excelano/plene/releases/download/v0.2.0/plene-aarch64-apple-darwin.tar.xz"
-      sha256 "bc9090243f14aa909244f7bde7ac2322a4c06563f0897324c2c40bdf975736f8"
+      url "https://github.com/excelano/plene/releases/download/v0.3.0/plene-aarch64-apple-darwin.tar.xz"
+      sha256 "55d0bf69a6597c81d0e837935a4963e9eb2b0f6dcb66af6d56a1ac213be8f0c3"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/excelano/plene/releases/download/v0.2.0/plene-x86_64-apple-darwin.tar.xz"
-      sha256 "67565889a5d346b0aa5c43f703bea2725b84a88fc1dec4833f85ffa3d7696c1f"
+      url "https://github.com/excelano/plene/releases/download/v0.3.0/plene-x86_64-apple-darwin.tar.xz"
+      sha256 "315bfe9c1bfb6112228752dddab1478ea15612f3fd49b320ed8636639ae618d4"
     end
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://github.com/excelano/plene/releases/download/v0.2.0/plene-aarch64-unknown-linux-gnu.tar.xz"
-      sha256 "c309b2069203bce46bd63bd90a24b9dcc1bb3987ae09b9e8617ffaf27104f586"
+      url "https://github.com/excelano/plene/releases/download/v0.3.0/plene-aarch64-unknown-linux-gnu.tar.xz"
+      sha256 "a51932649b54c4452a14ebe55817d297b5ce47a170c8aa4d3862c3bb282162ae"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/excelano/plene/releases/download/v0.2.0/plene-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "7392234853699c056fbd3ebacc61d1370c6920b02bf0f2bf980ec36687071676"
+      url "https://github.com/excelano/plene/releases/download/v0.3.0/plene-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "450a61f24d397bc5be1fe3bbfe984c1931ee9880090cd9a93cb01297043dd64a"
     end
   end
   license "MIT"
