@@ -5,21 +5,21 @@
 class Xtree < Formula
   desc "Show SharePoint document libraries as a tree, like tree"
   homepage "https://excelano.com/xftp/"
-  version "1.11.0"
+  version "1.11.1"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/excelano/xfiles/releases/download/v1.11.0/xtree_1.11.0_darwin_amd64.tar.gz"
-      sha256 "d07203498709ed115fb16ce14b93f7b14ba572d3d2b9251cefb316e8ab59dc17"
+      url "https://github.com/excelano/xfiles/releases/download/v1.11.1/xtree_1.11.1_darwin_amd64.tar.gz"
+      sha256 "4c2408cb42470f5f66b30ea9e39ac96d9890d8c1b02ac28b56b5a2a98201f185"
 
       define_method(:install) do
         bin.install "xtree"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/excelano/xfiles/releases/download/v1.11.0/xtree_1.11.0_darwin_arm64.tar.gz"
-      sha256 "de438e81e15e9a66463ce51e582f6ed743296f5cb9f4186b7850722e2984dd8c"
+      url "https://github.com/excelano/xfiles/releases/download/v1.11.1/xtree_1.11.1_darwin_arm64.tar.gz"
+      sha256 "e269c8834e7b217484acbf7cfdf7ac5f7546b93b660481d8dc5ae398a8c6cac7"
 
       define_method(:install) do
         bin.install "xtree"
@@ -29,15 +29,15 @@ class Xtree < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/excelano/xfiles/releases/download/v1.11.0/xtree_1.11.0_linux_amd64.tar.gz"
-      sha256 "22bbce71aef869dcaf92a8a4839aa0db83397f632270b057d3e2f9b336613552"
+      url "https://github.com/excelano/xfiles/releases/download/v1.11.1/xtree_1.11.1_linux_amd64.tar.gz"
+      sha256 "7567e515a7099d464f01391bedc83205ccfad1f1b397469264aaa4bce5cef00c"
       define_method(:install) do
         bin.install "xtree"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/excelano/xfiles/releases/download/v1.11.0/xtree_1.11.0_linux_arm64.tar.gz"
-      sha256 "daac7d70d161ce0ca991cf23ddb9c02abd3009e7fb3ec7122dbb6ba99fc05cff"
+      url "https://github.com/excelano/xfiles/releases/download/v1.11.1/xtree_1.11.1_linux_arm64.tar.gz"
+      sha256 "570101f1864424195c82fabdbc85e43f1c99d7627a308ce57af455587ccd2d0a"
       define_method(:install) do
         bin.install "xtree"
       end
