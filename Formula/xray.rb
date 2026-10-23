@@ -1,25 +1,25 @@
 class Xray < Formula
   desc "a read-only profiler for tabular data — what a CSV/DSV is, before you edit or query it"
   homepage "https://excelano.com/xray/"
-  version "0.6.0"
+  version "0.6.1"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/excelano/xray/releases/download/v0.6.0/x-ray-aarch64-apple-darwin.tar.xz"
-      sha256 "350fa962cf963cb8aa7afa50c7e33714cee5f4b847eedf016814c59484be558f"
+      url "https://github.com/excelano/xray/releases/download/v0.6.1/x-ray-aarch64-apple-darwin.tar.xz"
+      sha256 "47e54640ac6d941711e625084434238a79850fd86c615ad7552929f5e895f1b7"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/excelano/xray/releases/download/v0.6.0/x-ray-x86_64-apple-darwin.tar.xz"
-      sha256 "bd35eb2ad39169e7c561addc42c434fd5846690a26a64cd3b6170c1953502df1"
+      url "https://github.com/excelano/xray/releases/download/v0.6.1/x-ray-x86_64-apple-darwin.tar.xz"
+      sha256 "128ee95f770e323ba10d9eee9f33c93ff8987c305e7866946e50f9d8110da81a"
     end
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://github.com/excelano/xray/releases/download/v0.6.0/x-ray-aarch64-unknown-linux-gnu.tar.xz"
-      sha256 "e7610f6c06cef773721720fcab0d475d6adb459f8beece98574e22832ac6f19d"
+      url "https://github.com/excelano/xray/releases/download/v0.6.1/x-ray-aarch64-unknown-linux-gnu.tar.xz"
+      sha256 "f21dcf8dd6dd6082bd0d560831034a27c7e19e95846ae09726b7405f027ac49f"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/excelano/xray/releases/download/v0.6.0/x-ray-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "a52f3541297a68aee1119086d68d91a81c1c8e3b422be5165a581a68a5b4e40b"
+      url "https://github.com/excelano/xray/releases/download/v0.6.1/x-ray-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "66ef012ef248fad973d248bffdf53268fc57a2fe1c83845cea27e3083d7818d4"
     end
   end
   license "MIT"
