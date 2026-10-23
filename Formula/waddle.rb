@@ -1,25 +1,25 @@
 class Waddle < Formula
   desc "Write ODT and DOCX from DocLang and docling JSON"
   homepage "https://github.com/excelano/waddle"
-  version "0.3.1"
+  version "0.4.0"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/excelano/waddle/releases/download/v0.3.1/waddle-aarch64-apple-darwin.tar.xz"
-      sha256 "48fb1d23228d10253c76357292b225a5ab23998b5ce0f1520a2d431e6c4a4946"
+      url "https://github.com/excelano/waddle/releases/download/v0.4.0/waddle-aarch64-apple-darwin.tar.xz"
+      sha256 "cb96ba1a6593b6d4ddcd3be0650f29d4f00125e1061f41023c8e5b61e8204c7a"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/excelano/waddle/releases/download/v0.3.1/waddle-x86_64-apple-darwin.tar.xz"
-      sha256 "925533a7b85b7897aec9d01eac02d59c54079f2e07ef9819f8cf9d18b4a13a2c"
+      url "https://github.com/excelano/waddle/releases/download/v0.4.0/waddle-x86_64-apple-darwin.tar.xz"
+      sha256 "cf81587be278b2ec6d7283cec12295290ccbaf262edebdf77d0911a8c2ab8168"
     end
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://github.com/excelano/waddle/releases/download/v0.3.1/waddle-aarch64-unknown-linux-gnu.tar.xz"
-      sha256 "7a8a08116781794d52cf0ccccc69aa9298fd7eb97f6ae7b0fdf63d721618fd47"
+      url "https://github.com/excelano/waddle/releases/download/v0.4.0/waddle-aarch64-unknown-linux-gnu.tar.xz"
+      sha256 "184f76c8b84422439dcd97174468cd2f1e7d36c35c801a3ce29c20b95c0346cd"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/excelano/waddle/releases/download/v0.3.1/waddle-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "8d51be8d7d3972554bc99e0e9dd8866922c5f7480cd272718868b077c7c9cb0e"
+      url "https://github.com/excelano/waddle/releases/download/v0.4.0/waddle-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "49fb538e03467206e4ee522e5ff1ecf11e5f4be9efb2f20aaf9900cf35aa3410"
     end
   end
   license "MIT"
