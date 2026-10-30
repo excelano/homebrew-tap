@@ -1,25 +1,25 @@
 class Slipcase < Formula
   desc "Pack, unpack, repack, inspect, and validate Slipcase containers: a ZIP holding a content file and the TOML flyleaf that describes it"
   homepage "https://slipcaseformat.org"
-  version "0.6.0"
+  version "0.7.0"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/excelano/slpc-rust/releases/download/v0.6.0/slipcase-aarch64-apple-darwin.tar.xz"
-      sha256 "a3ad5afd1e19d584addd7b75c4e040202d794014c6f9aa2cc8ec81e7ffa51935"
+      url "https://github.com/excelano/slpc-rust/releases/download/v0.7.0/slipcase-aarch64-apple-darwin.tar.xz"
+      sha256 "b402178894fd398e59bf9f274bab5aff9bf1eb006433659ed1c427a5bede2f5a"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/excelano/slpc-rust/releases/download/v0.6.0/slipcase-x86_64-apple-darwin.tar.xz"
-      sha256 "932b786ce228ce506d70ae399b37be073ec8726f4224c42e3cf9cbdbede89d4d"
+      url "https://github.com/excelano/slpc-rust/releases/download/v0.7.0/slipcase-x86_64-apple-darwin.tar.xz"
+      sha256 "2058d1c3fc932c31e26e200afbec416f463c98a0862139dafcfdc6987563f196"
     end
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://github.com/excelano/slpc-rust/releases/download/v0.6.0/slipcase-aarch64-unknown-linux-gnu.tar.xz"
-      sha256 "65805d78d091d906d166dcd1f2577b072f9f948ac2b2ff138b64632cd1b92ff7"
+      url "https://github.com/excelano/slpc-rust/releases/download/v0.7.0/slipcase-aarch64-unknown-linux-gnu.tar.xz"
+      sha256 "87d74280c6e12571f513411624da3e64d1e0541e7ffda668dd3aeb398ff23490"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/excelano/slpc-rust/releases/download/v0.6.0/slipcase-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "b87aafbaedca9d8c1ef4d2b1983cf48825609de5c3a9ea8403f786d7ee8133b5"
+      url "https://github.com/excelano/slpc-rust/releases/download/v0.7.0/slipcase-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "0a95738c348abf1ab6ac15858136238a4f56e6755dd8adfbcbdd0b4671b9f765"
     end
   end
   license "MIT"
