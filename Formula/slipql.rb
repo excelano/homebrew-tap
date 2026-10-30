@@ -1,25 +1,25 @@
 class Slipql < Formula
   desc "A query language for Slipcase flyleaves: select, from, where over a directory of containers"
   homepage "https://slipcaseformat.org"
-  version "0.2.1"
+  version "0.3.0"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/excelano/slipql/releases/download/v0.2.1/slipql-aarch64-apple-darwin.tar.xz"
-      sha256 "5435e58df827597411c1532cce2c2b7dda0fb8b365de957a6e9c04550864e72f"
+      url "https://github.com/excelano/slipql/releases/download/v0.3.0/slipql-aarch64-apple-darwin.tar.xz"
+      sha256 "0b59bdb90c8c18298366e2ae3b082d40c439f33f644b9a481be3dc75430d377c"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/excelano/slipql/releases/download/v0.2.1/slipql-x86_64-apple-darwin.tar.xz"
-      sha256 "49e41bb9da791cafaa378f0a330b3075bf0b28d7d0b4780e1f5a83ab7e623d43"
+      url "https://github.com/excelano/slipql/releases/download/v0.3.0/slipql-x86_64-apple-darwin.tar.xz"
+      sha256 "ccc4fbe626b61b8434a7b624d7e0059973df5f73bb2cc840998de9bfb6d0c903"
     end
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://github.com/excelano/slipql/releases/download/v0.2.1/slipql-aarch64-unknown-linux-gnu.tar.xz"
-      sha256 "0304da1923e0627b2751f3b8d4e2fc75bb5dcd2204b63beac6f31c4eb9fae9c6"
+      url "https://github.com/excelano/slipql/releases/download/v0.3.0/slipql-aarch64-unknown-linux-gnu.tar.xz"
+      sha256 "89ea1474b9e210633425c0cfe73387db24d99cf616ef34a900cfcbb426785604"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/excelano/slipql/releases/download/v0.2.1/slipql-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "a37b27ad76ef81bf3515990c101f4e90093a6bf115fda26ff3748cdc22bfce43"
+      url "https://github.com/excelano/slipql/releases/download/v0.3.0/slipql-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "a748150b315b525c55e72a7550ea818dec3daee9f44ec311d76094daa7ae406d"
     end
   end
   license "MIT"
