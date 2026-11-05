@@ -1,25 +1,25 @@
 class Paxc < Formula
   desc "A compiler for the pax DSL, producing Power Automate cloud flow definitions"
   homepage "https://excelano.com/paxc/"
-  version "4.0.1"
+  version "4.0.2"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/excelano/paxc/releases/download/v4.0.1/paxc-aarch64-apple-darwin.tar.xz"
-      sha256 "5b5e291ca779534569bee54b71f09367462fb25ae66aa9dfda341ec833fd1122"
+      url "https://github.com/excelano/paxc/releases/download/v4.0.2/paxc-aarch64-apple-darwin.tar.xz"
+      sha256 "9c283c54baa46cf6a006269811d3d5b166d3802b41c93821eb4255f53f977c69"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/excelano/paxc/releases/download/v4.0.1/paxc-x86_64-apple-darwin.tar.xz"
-      sha256 "3ce845fbd8406b5e3e176a59626664b2b25ce5c91d112f4c0ca75f7586b41751"
+      url "https://github.com/excelano/paxc/releases/download/v4.0.2/paxc-x86_64-apple-darwin.tar.xz"
+      sha256 "d8f97ff3abce98b7f6b694e10f4e3214a7fcde872e9ce1fa1cdaf6f6aca05a8b"
     end
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://github.com/excelano/paxc/releases/download/v4.0.1/paxc-aarch64-unknown-linux-gnu.tar.xz"
-      sha256 "c1571607fdc3d5cd08b58e2d00c0fbea3d71ede055c9775ece7c68952d4e4bec"
+      url "https://github.com/excelano/paxc/releases/download/v4.0.2/paxc-aarch64-unknown-linux-gnu.tar.xz"
+      sha256 "d99a0dd3f38a96f9a64706c392029640f87c5ceb18bf99e6a287a99ec4cdf8c0"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/excelano/paxc/releases/download/v4.0.1/paxc-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "fa209469cdf4ba4b29155d39fca90e4bfbe7f4d1ca0c71ada9dc380b0d4bc2f1"
+      url "https://github.com/excelano/paxc/releases/download/v4.0.2/paxc-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "c800ad7c447a0386a2933db270f0c4436353c59912e42843e5ab3da949aca184"
     end
   end
   license "MIT"
