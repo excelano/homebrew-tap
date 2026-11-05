@@ -5,8 +5,8 @@
 # Author: David M. Anderson
 # Built with AI assistance (Claude, Anthropic)
 cask "slipcase-open" do
-  version "0.2.2"
-  sha256 "b2ed96e92cb05f5538e69ea220999dabd23092d4d7156050552f03bceea29a4b"
+  version "0.3.0"
+  sha256 "8f70feaf0f4e310970e31290a7f10f535aff87bb45656898f14e50569a11e753"
 
   url "https://github.com/excelano/slipcase-open/releases/download/v#{version}/slipcase-open-#{version}-macos.zip"
   name "Slipcase Open"
